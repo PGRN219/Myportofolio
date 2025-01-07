@@ -22,11 +22,11 @@
             padding-top: 20px;
         }
         header {
-            background: #35424a;
+            background: linear-gradient(to right, #1e3c72, #2a5298, #000); /* Gradasi Biru dan Hitam */
             color: #ffffff;
             padding-top: 30px;
             min-height: 70px;
-            border-bottom: #e8491d 3px solid;
+            border-bottom: 3px solid #ffffff;
         }
         header a {
             color: #ffffff;
@@ -49,7 +49,7 @@
             float: left;
             display: inline;
             padding: 0 20px 0 20px;
-            border-right: #ffffff 1px solid;
+            border-right: 1px solid #ffffff;
             font-size: 24px;
         }
         header h1:hover {
@@ -58,54 +58,147 @@
         }
         .content {
             background: #ffffff;
-            padding: 10px;
-            overflow: hidden;
+            padding: 40px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .content p {
             text-align: justify;
+            line-height: 1.8;
+            color: #333;
+            font-size: 1.1rem;
         }
-        .profile-img {
-            float: left;
-            margin-right: 20px;
+        .content h2 {
+            color: #2a5298;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .content .profile-img {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
         }
         .profile-img img {
-            width: 200px;
-            height: auto;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
+            border: 5px solid #2a5298;
         }
-        .slider {
-            width: 100%;
-            height: auto;
-            overflow: hidden;
+        .marquee-text {
+            background-color: #2a5298;
+            color: #ffffff;
+            padding: 10px 0;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .highlight {
+            color: #e8491d; /* Oranye */
+            font-weight: bold;
+        }
+        .motto {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #333;
             margin-top: 20px;
             text-align: center;
         }
-        .slider img {
-            width: 20%;
-            height: 40vh;
-            object-fit: cover;
-            margin: 0 10px;
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
         }
-        .marquee-text {
-            background-color: #35424a;
+        .social-links a {
+            background-color: #2a5298;
             color: #ffffff;
-            padding: 10px 0;
-            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: #1e3c72;
+        }
+
+        /* Responsif untuk perangkat dengan lebar layar kecil (ponsel) */
+        @media (max-width: 600px) {
+            body {
+                font-size: 1rem; /* Ukuran font yang lebih kecil */
+            }
+
+            header {
+                padding-top: 20px;
+                min-height: 60px;
+            }
+
+            header h1 {
+                font-size: 18px; /* Mengurangi ukuran font header untuk ponsel */
+                padding: 0 10px;
+            }
+
+            .container {
+                width: 90%; /* Lebar kontainer lebih kecil di ponsel */
+                padding-top: 10px;
+            }
+
+            .content {
+                padding: 20px; /* Mengurangi padding konten agar lebih nyaman di layar kecil */
+            }
+
+            .content h2 {
+                font-size: 1.8rem; /* Ukuran font yang lebih kecil untuk judul */
+            }
+
+            .profile-img img {
+                width: 120px; /* Mengurangi ukuran gambar profil */
+                height: 120px;
+            }
+
+            .social-links a {
+                padding: 8px 15px; /* Menyesuaikan ukuran tombol sosial agar lebih mudah di klik */
+                font-size: 14px;
+            }
+
+            .marquee-text {
+                font-size: 1rem; /* Menyesuaikan ukuran font di dalam marquee */
+            }
+        }
+
+        /* Responsif untuk tablet */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 22px; /* Ukuran font header lebih besar dari ponsel */
+            }
+
+            .profile-img img {
+                width: 140px; /* Ukuran gambar sedikit lebih besar di tablet */
+            }
+
+            .content h2 {
+                font-size: 1.9rem; /* Menambah sedikit ukuran font untuk judul */
+            }
+
+            .social-links a {
+                padding: 12px 18px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Muhmammad Fauzan | <span>IT ENGINEER</span></h1>
+            <h1>Muhammad Fauzan | <span>IT ENGINEER</span></h1>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="cv.php">CV</a></li>
-                <li><a href="portfolio.php">Portofolio</a></li>
+                <li><a href="portfolio.php">Project</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
     </header>
+
     <div class="container">
         <section id="main">
             <div class="content">
@@ -113,43 +206,20 @@
                     <img src="img/fotoku.jpeg" alt="Foto Profil">
                 </div>
                 <h2>TENTANG SAYA</h2>
-                <p>Saya adalah lulusan sarjana komputer yang memiliki ketelitian tinggi, kemampuan analitis, serta pemahaman dalam manajemen data dan teknologi. Saya telah menyelesaikan studi selama 4 tahun. Selama masa studi, saya terbiasa dengan pengolahan data menggunakan berbagai perangkat lunak, dan tingkat analisis yang tinggi serta memiliki kemampuan komunikasi yang baik dalam berinteraksi dengan tim maupun klien proyek. Saya berkomitmen untuk memberikan pelayanan prima sesuai prinsip perusahaan, serta mendukung efisiensi operasional sebagai pegawai.
-                </p>
+                <p>Saya Muhammad Fauzan, Sebagai seorang Junior di bidang IT, saya mengembangkan keterampilan saya secara profesional dalam menghadapi berbagai tantangan teknologi. Saya lahir di Bima pada tanggal 27 Juli 2002, dan saya berkomitmen untuk terus belajar dan meningkatkan kemampuan saya dalam dunia teknologi informasi. Dengan semangat yang kuat dan dedikasi yang tinggi, saya siap untuk menjelajahi dan memberikan kontribusi positif dalam Teknologi Industri di Indonesia.</p>
+
                 <h2>Motto</h2>
-                <p>"Menginspirasi dengan integritas dan bertindak dengan keberanian."</p>
-    
-                <div class="slider">
-                    <img src="img/fotoku.jpeg" alt="Foto 1">
-                    <img src="img/fotoku1.jpeg" alt="Foto 2">
-                    <img src="img/fotoku2.jpeg" alt="Foto 3">
-                    <img src="img/fotoku3.jpeg" alt="Foto 4">
+                <p class="motto">"Menginspirasi dengan integritas dan bertindak dengan keberanian."</p>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/posts/m-fauzan-08b909262_welcome-to-new-journey-activity-7278973225194201088-9BC8?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/mfauzan" target="_blank">GitHub</a>
+                    <a href="mailto:mhdzan0702@gmail.com">Email</a>
                 </div>
             </div>
         </section>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Ambil semua gambar di slider
-            var images = $('.slider img');
-            var totalImages = images.length;
-            var currentIndex = 0;
 
-            // Sembunyikan semua gambar kecuali yang pertama
-            images.slice(1).hide();
-
-            // Fungsi untuk menggeser gambar
-            function slideImage() {
-                var nextIndex = (currentIndex + 1) % totalImages;
-                images.eq(currentIndex).fadeOut(500);
-                images.eq(nextIndex).fadeIn(500);
-                currentIndex = nextIndex;
-            }
-
-            // Panggil fungsi slideImage setiap 3 detik
-            setInterval(slideImage, 5000);
-        });
-    </script>
     <div class="marquee-text">
         <marquee behavior="scroll" direction="left" scrollamount="10">WELCOME TO MY PORTOFOLIO     |      SELAMAT DATANG DI PORTOFOLIO SAYA</marquee>
     </div>
