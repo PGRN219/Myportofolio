@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - M Fauzan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            float: right;
+            margin-right: 20px;
+        }
+        header ul li {
+            display: inline;
+            padding: 0 15px 0 15px;
+        }
+        header h1 {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+            border-right: #ffffff 1px solid;
+            font-size: 24px;
+        }
+        header h1:hover {
+            color: #e8491d;
+            transition: color 0.3s ease-in-out;
+        }
+        .content {
+            background: #ffffff;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .content p {
+            text-align: justify;
+        }
+        .profile-img {
+            float: left;
+            margin-right: 20px;
+        }
+        .profile-img img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .slider {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .slider img {
+            width: 20%;
+            height: 40vh;
+            object-fit: cover;
+            margin: 0 10px;
+        }
+        .marquee-text {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Muhmammad Fauzan | <span>IT ENGINEER</span></h1>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="cv.php">CV</a></li>
+                <li><a href="portfolio.php">Portofolio</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <section id="main">
+            <div class="content">
+                <div class="profile-img">
+                    <img src="img/fotoku.jpeg" alt="Foto Profil">
+                </div>
+                <h2>TENTANG SAYA</h2>
+                <p>Saya adalah lulusan sarjana komputer yang memiliki ketelitian tinggi, kemampuan analitis, serta pemahaman dalam manajemen data dan teknologi. Saya telah menyelesaikan studi selama 4 tahun. Selama masa studi, saya terbiasa dengan pengolahan data menggunakan berbagai perangkat lunak, dan tingkat analisis yang tinggi serta memiliki kemampuan komunikasi yang baik dalam berinteraksi dengan tim maupun klien proyek. Saya berkomitmen untuk memberikan pelayanan prima sesuai prinsip perusahaan, serta mendukung efisiensi operasional sebagai pegawai.
+                </p>
+                <h2>Motto</h2>
+                <p>"Menginspirasi dengan integritas dan bertindak dengan keberanian."</p>
+    
+                <div class="slider">
+                    <img src="img/fotoku.jpeg" alt="Foto 1">
+                    <img src="img/fotoku1.jpeg" alt="Foto 2">
+                    <img src="img/fotoku2.jpeg" alt="Foto 3">
+                    <img src="img/fotoku3.jpeg" alt="Foto 4">
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Ambil semua gambar di slider
+            var images = $('.slider img');
+            var totalImages = images.length;
+            var currentIndex = 0;
+
+            // Sembunyikan semua gambar kecuali yang pertama
+            images.slice(1).hide();
+
+            // Fungsi untuk menggeser gambar
+            function slideImage() {
+                var nextIndex = (currentIndex + 1) % totalImages;
+                images.eq(currentIndex).fadeOut(500);
+                images.eq(nextIndex).fadeIn(500);
+                currentIndex = nextIndex;
+            }
+
+            // Panggil fungsi slideImage setiap 3 detik
+            setInterval(slideImage, 5000);
+        });
+    </script>
+    <div class="marquee-text">
+        <marquee behavior="scroll" direction="left" scrollamount="10">WELCOME TO MY PORTOFOLIO     |      SELAMAT DATANG DI PORTOFOLIO SAYA</marquee>
+    </div>
+</body>
+</html>
